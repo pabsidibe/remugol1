@@ -1,0 +1,108 @@
+<ion-view style=""  title='INSCRIPTION'>
+  <ion-content class="has-header" padding="'true'">
+
+    <div style="" class="list card">
+      <!--<div class="item item-divider">INSCRIPTION</div>-->
+      <!--<div class="item item-body">-->
+        <form name="authorizationForm" novalidate="" ng-submit=" signUp(authorizationForm);submitted = true" class="list">
+
+          <table style=""  class="item item-input" >
+            <tr><td> Nom</td></tr>
+            <tr ><td><input placeholder="" name="firstName" type="text"  required pattern="^[-\w/]+$"  ng-model="inscription.user.firstName"></td></tr>
+            <tr><td><span ng-if="authorizationForm.firstName.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+          </table>
+          <table style=""  class="item item-input">
+            <tr><td>Prenom</td></tr>
+            <tr ><td><input placeholder="" name="lastName" type="text" pattern="^[-\w/]+$" required  ng-model="inscription.user.lastName" ></td></tr>
+            <tr><td><span ng-if="authorizationForm.lastName.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+          </table>
+          <table style=""  class="item item-input">
+            <tr><td>Email</td></tr>
+            <tr ><td><input placeholder="" name="email" type="email"  required  ng-model="inscription.user.Email" ></td></tr>
+            <tr><td><span ng-if="authorizationForm.email.$invalid && submitted" class="assertive">veuillez verifier votre email</span></td></tr>
+          </table>
+          <table style=""  class="item item-input">
+            <tr><td>Pseudo</td></tr>
+            <tr ><td><input placeholder="" name="pseudo" type="text"  required pattern="^[-\w/]+$"  ng-model="inscription.user.pseudo"></td></tr>
+            <tr><td><span ng-if="authorizationForm.pseudo.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+          </table>
+          <table style=""  class="item item-input">
+            <tr><td>Mot de passe</td></tr>
+            <tr ><td><input placeholder="" name="pwd" type="password" pattern="^[-\w/]+$" required  ng-model="inscription.user.mdp" ></td></tr>
+            <tr><td><span ng-if="authorizationForm.pwd.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+          </table>
+          <table style=""  class="item item-input">
+            <tr><td>Zone/Village</td></tr>
+            <tr ><td> <input placeholder="" type="text"   name="zone" pattern="^[-\w/]+$" required  ng-model="inscription.user.zone"></td></tr>
+            <tr><td><span ng-if="authorizationForm.zone.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+
+          </table>
+          <table style=""  class="item item-input">
+            <tr><td>Pays</td></tr>
+            <tr ><td> <input placeholder="" type="text"  name="pays" required  ng-model="inscription.user.pays" ></td></tr>
+            <tr><td><span ng-if="authorizationForm.pays.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+          </table>
+          <table style=""  class="item item-input">
+            <tr><td>Ville</td></tr>
+            <tr ><td> <input placeholder="" type="text"  name="ville" pattern="^[-\w/]+$" required  ng-model="inscription.user.ville" ></td></tr>
+            <tr><td><span ng-if="authorizationForm.ville.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+          </table>
+          <!--<table style=""  class="item item-input">-->
+            <!--<tr><td>Longititude</td></tr>-->
+            <!--<tr ><td> <input placeholder="" type="number" pattern="[/\d+/]"  name="longi"  required  ng-model="inscription.user.longitude"></td></tr>-->
+            <!--<tr><td><span ng-if="authorizationForm.longi.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>-->
+
+          <!--</table>-->
+          <!--<table style=""  class="item item-input">-->
+          <!--<tr><td>latitude</td></tr>-->
+          <!--<tr ><td> <input placeholder="" type="number" pattern="[/\d+/]"  name="lat"  required  ng-model="inscription.user.latitude"></td></tr>-->
+          <!--<tr><td><span ng-if="authorizationForm.lat.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>-->
+          <!---->
+          <!--</table>-->
+          <table style=""  class="item item-input">
+            <tr><td>Contact</td></tr>
+            <tr ><td> <input placeholder="" type="text"  name="contact" pattern="^[-\w/]+$" required  ng-model="inscription.user.contact"></td></tr>
+            <tr><td><span ng-if="authorizationForm.contact.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+          </table>
+          <table style="" class="item item-select">
+            <tr ><td>Type Utilisateur</td></tr>
+            <tr><td> <select  ng-model="inscription.user.type" >
+              <option value="producteur">producteur</option>
+              <option value="usinier">usinier</option>
+            </select></td></tr>
+          </table>
+          <div ng-if="inscription.user.type == 'producteur'">
+            <table style="" class="item item-select">
+              <tr ><td>Type de Structure</td></tr>
+              <tr><td> <select  ng-model="inscription.user.structure" >
+                <option value="R1">Coopérative</option>
+                <option value="R2">Union</option>
+                <option value="R3">GIE</option>
+                <option value="R4">Entreprise privée</option>
+              </select></td></tr>
+            </table>
+          </div>
+          <div  ng-if="inscription.user.type == 'usinier'">
+            <table style=""  class="item item-input">
+              <tr><td>typeUsine</td></tr>
+              <tr ><td> <input placeholder="" type="text"  name="typeusine" pattern="^[-\w/]+$" required  ng-model="inscription.user.typeUsine"></td></tr>
+              <tr><td><span ng-if="authorizationForm.typeusine.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+
+            <table style=""  class="item item-input">
+              <tr><td>Capacite</td></tr>
+              <tr ><td> <input placeholder="" type="text"  name="capacite" pattern="^[-\w/]+$" required  ng-model="inscription.user.capacite"></td></tr>
+              <tr><td><span ng-if="authorizationForm.capacite.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+          </div>
+
+
+          <button type="submit" class="button button-stable button-block ">Valider</button>
+        </form>
+      <!--</div>-->
+    <!--</div>-->
+
+  </ion-content>
+</ion-view>
+
+

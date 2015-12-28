@@ -1,0 +1,57 @@
+<div style="" class="list card">
+    <div class="item item-divider">Identification du Producteur</div>
+    <div class="item item-body">
+        <form name="authorizationForm" novalidate="" ng-submit="sign(authorizationForm);submitted = true" class="list">
+            <table style="" class="item item-input">
+                <tr><td>Nom</td></tr>
+                <tr><td><input placeholder="" name="firstName" pattern="^[-\w/]+$" required type="text" ng-model="stock.user.firstName">
+              <tr><td><span ng-if="authorizationForm.firstName.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+                  </table>
+            <table style="" class="item item-input">
+                <tr><td>Prenom</td></tr>
+                <tr><td> <input placeholder="" name="lastName" pattern="^[-\w/]+$" required type="text" ng-model="stock.user.lastName"></td></tr>
+                <tr><td><span ng-if="authorizationForm.lastName.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style=""  class="item item-input">
+                        <tr><td>Email</td></tr>
+                        <tr ><td><input placeholder="" name="email"  type="text"  required  ng-model="stock.user.Email" ></td></tr>
+                   <tr><td><span ng-if="authorizationForm.email.$invalid && submitted" class="assertive">veuillez verifier votre email</span></td></tr>
+                    </table>
+            <table style="" class="item item-input">
+                <tr><td>Pays</td></tr>
+                <tr><td> <input placeholder=""name="pays" pattern="^[-\w/]+$" required type="text" ng-model="stock.user.pays"></td></tr>
+            <tr><td><span ng-if="authorizationForm.pays.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+           </table>
+            <table style="" class="item item-input">
+                <tr><td>Ville</td></tr>
+                <tr><td> <input placeholder="" name="ville" pattern="^[-\w/]+$" required type="text" ng-model="stock.user.ville"></td></tr>
+           <tr><td><span ng-if="authorizationForm.ville.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Zone/Village</td></tr>
+                <tr><td> <input placeholder="" name="zone" pattern="^[-\w/]+$"  required type="text" ng-model="stock.user.zone"></td></tr>
+                <tr><td><span ng-if="authorizationForm.zone.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Contact</td></tr>
+                <tr><td>  <input placeholder="" name="contact" pattern="^[-\w/]+$" required type="text" ng-model="stock.user.contact"></td></tr>
+           <tr><td><span ng-if="authorizationForm.contact.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <!--<table style="" class="item item-input">
+                <tr><td>Structure</td></tr>
+                <tr><td>  <input placeholder="" name="structure" required type="text" ng-model="stock.user.structure"></td></tr>
+            </table>-->
+            <table style="" class="item item-select">
+                        <tr ><td>Type de Structure</td></tr>
+                        <tr><td> <select  ng-model="stock.user.structure" >
+                            <option value="R1">Coopérative</option>
+                            <option value="R2">Union</option>
+                            <option value="R2">GIE</option>
+                            <option value="R2">Entreprise privée</option>
+                        </select></td></tr>
+                    </table>
+            <button type="submit" class="button button-stable button-block ">Suivant</button>
+            <!--<a style="" class="button button-stable button-block " ui-sref="stock.page2" menu-close="">Suivant</a>-->
+        </form>
+    </div>
+</div>

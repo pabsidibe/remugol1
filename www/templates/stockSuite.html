@@ -1,0 +1,87 @@
+<div style="" class="list card">
+    <div class="item item-divider">Informations sur le champ</div>
+    <div class="item item-body">
+        <form name="authorizationForm" novalidate="" class="list" ng-submit="signIn(authorizationForm);submitted = true">
+            <table style="" class="item item-input">
+                <tr><td>Année de campagne agricole</td></tr>
+                <tr><td> <input placeholder="" name="ann" type="number" pattern="^[/\d+/]+$" required ng-model="stock.data.anneeCampagne" ></td></tr>
+                     <tr><td><span ng-if="authorizationForm.ann.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+            </table>
+            <table style="" class="item item-select">
+                        <tr ><td>Période de campagne</td></tr>
+                        <tr><td> <select  ng-model="stock.data.periode" >
+                            <option value="R1">saison chaude</option>
+                            <option value="R2">hivernage</option>
+                        </select></td></tr>
+                    </table>
+            <table style="" name="dsdsds" class="item item-input">
+                <tr><td>Spéculation (Riz)</td></tr>
+                <tr><td> <input placeholder="" name="spec" type="text" pattern="^[-\w/]+$" required ng-model="stock.data.speculation"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.spec.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Superficie emblavée</td></tr>
+                <tr><td><input placeholder="" name="sup" type="number" pattern="^[/\d+/]+$" required ng-model="stock.data.superficie"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.sup.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+            </table>
+            <table style="" class="item item-select">
+                <tr><td>Catégorie Semence</td></tr>
+                <tr><td><select  ng-model="stock.data.categorie" >
+                    <option value="R1">R1</option>
+                    <option value="R2">R2</option>
+                </select></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Variété&nbsp;</td></tr>
+                <tr><td> <input placeholder="" name="var" type="text" pattern="^[-\w/]+$" required  ng-model="stock.data.variete"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.var.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+           </table>
+            <table style="" class="item item-input">
+                <tr><td>Production </td></tr>
+                <tr><td> <input placeholder="" type="text" pattern="^[-\w/]+$" required  ng-model="stock.data.productionPrevue"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.pp.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Localisation</td></tr>
+                <tr><td>  <input placeholder="" name="loc" type="text" pattern="^[-\w/]+$" required ng-model="stock.data.location"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.loc.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Destination</td></tr>
+                <tr><td> <input placeholder="" type="text" pattern="^[-\w/]+$" required  ng-model="stock.data.destination"></td></tr>
+            </table>
+            <div class="item item-divider">Qualite Paddy</div>
+            <table style="" class="item item-select">
+                
+                        <tr><td>Type de recolte</td></tr>
+                        <tr><td> <select  ng-model="stock.data.typerecolte" >
+                            <option value="R1">Manuel</option>
+                            <option value="R2">Mecanique</option>
+                            <option value="R2">Mixte</option>
+                        </select></td></tr>
+                    </table>
+            <table style="" class="item item-select">
+                
+                        <tr><td>Type de battage</td></tr>
+                        <tr><td> <select  ng-model="stock.data.typebattage" >
+                            <option value="R1">Manuel</option>
+                            <option value="R2">Mecanique</option>
+                            <option value="R2">Mixte</option>
+                        </select></td></tr>
+                    </table>
+            <table style="" class="item item-input">
+                <tr><td>Taux d'humidite</td></tr>
+                <tr><td> <input placeholder="" type="text" pattern="^[-\w/]+$" required  ng-model="stock.data.taux"></td></tr>
+            </table>
+            <table style="" class="item item-select">
+                        <tr><td>Homogenéite</td></tr>
+                        <tr><td> <select  ng-model="stock.data.homogeneite" >
+                            <option value="R1">Très Bonne</option>
+                            <option value="R2">Bonne</option>
+                            <option value="R2">Moyenne</option>
+                        </select></td></tr></table>
+            <button  class="button button-stable button-block  icon-left ion-android-create" type="submit"> Valider </button>
+            <!--<a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addStock()" menu-close="">Valider</a>-->
+        </form>
+    </div>
+</div>

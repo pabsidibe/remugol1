@@ -1,0 +1,26 @@
+
+<ion-view >
+  <ion-nav-bar class="bar-light" align-title="center">
+    <img src='image/logo-remugol.png' >
+  </ion-nav-bar>
+  <ion-content class="has-header" padding="'true'">
+
+        <form style="" name="authorizationForm" class="list" novalidate="" ng-submit="connexion(authorizationForm)" >
+            <ion-list style="">
+                <label style=""  class="item item-input">
+                    <span class="input-label">Pseudo</span>
+                    <input placeholder="" type="text" name="UserName" ng-model="user.userName"   required >
+                </label>
+                <label style=""  class="item item-input">
+                    <span class="input-label">Mot de passe</span>
+                    <input placeholder="" type="password" name="Password"  ng-model="user.pwd" required >
+                </label>
+            </ion-list>
+            <div style="height: 40px;" class="spacer"></div>
+            <button type="submit" style="" class="button button-balanced button-block ">Connexion</button>
+
+           <button style="" class="button button-positive button-clear button-block "  ng-click="testConnection()" menu-close="">Creer un compte</button>
+           <!-- <a style="" class="button button-positive button-clear button-block "  href="#/EditCompte" menu-close="">Edit account</a>-->
+        </form>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,66 @@
+<div style="" class="list card">
+            <div class="item item-divider">Informations sur le champ</div>
+            <div class="item item-body">
+                <form name="authorizationForm" novalidate="" class="list" ng-submit="sign(authorizationForm);submitted = true">
+                    <table style="" class="item item-input">
+                       <tr><td>Année de campagne agricole</td></tr>
+                       <tr><td> <input placeholder="" name="ann" type="number" pattern="^[/\d+/]+$" required ng-model="prevision.data.anneeCampagne" ></td></tr>
+                     <tr><td><span ng-if="authorizationForm.ann.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+
+                    </table>
+                    <table style="" class="item item-select">
+                        <tr ><td>Période de campagne</td></tr>
+                        <tr><td> <select  ng-model="prevision.data.periode" >
+                            <option value="R1">saison chaude</option>
+                            <option value="R2">hivernage</option>
+                        </select></td></tr>
+                    </table>
+                    <table style="" name="dsdsds" class="item item-input">
+                        <tr ><td>Spéculation (Riz)</td></tr>
+                        <tr ><td><input placeholder="" type="text" pattern="^[-\w/]+$" name="spec" required ng-model="prevision.data.speculation"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.spec.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+
+                    </table>
+                    <table style="" class="item item-input">
+                        <tr><td>Superficie emblavée</td></tr>
+                        <tr><td> <input placeholder="" type="number" pattern="^[/\d+/]+$"  name="sup" required ng-model="prevision.data.superficie"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.sup.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+
+                    </table>
+                    <table style="" class="item item-select">
+                        <tr ><td>Catégorie Semence</td></tr>
+                        <tr><td> <select  ng-model="prevision.data.categorie" >
+                            <option value="1">entier</option>
+                            <option value="2">brise</option>
+                        </select></td></tr>
+                    </table>
+                    <table style="" class="item item-input">
+                        <tr ><td>Variété&nbsp;</td></tr>
+                        <tr ><td> <input placeholder="" type="text" pattern="^[-\w/]+$" name="var" required ng-model="prevision.data.variete"></td></tr>
+                   <tr><td><span ng-if="authorizationForm.var.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+
+                    </table>
+                    <table style="" class="item item-input">
+                        <tr ><td>Production </td></tr>
+                        <tr ><td><input placeholder="" type="text" pattern="^[-\w/]+$" name="pp" required ng-model="prevision.data.productionPrevue"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.pp.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+
+                    </table>
+                    <table style="" class="item item-input">
+                        <tr ><td>Localisation</td></tr>
+                        <tr ><td><input placeholder="" type="text" pattern="^[-\w/]+$"  name="loc" required ng-model="prevision.data.location"></td></tr>
+                    <tr><td><span ng-if="authorizationForm.loc.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+
+                    </table>
+                    <table style="" class="item item-select">
+                        <tr><td>Ecosystème</td></tr>
+                        <tr><td><select  ng-model="prevision.data.ecosysteme" >
+                            <option value="1">irrigue</option>
+                            <option value="2">plateau</option>
+                        </select></td></tr>
+                    </table>
+                    <button type="submit" class="button button-stable button-block  icon-left ion-android-create">Valider</button>
+                    <!--<a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addPrevision()" menu-close="">Valider</a>-->
+                </form>
+            </div>
+        </div>

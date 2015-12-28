@@ -1,0 +1,146 @@
+<ion-view style="" title="Archives Produits">
+   <ui-sref="home.back"> <ion-nav-bar>
+  <ion-nav-back-button class="button-clear">
+    <i class="ion-arrow-left-c"></i> retour
+  </ion-nav-back-button>
+</ion-nav-bar></ui-sref>
+    <ion-content class="has-header" padding="'true'">
+        <h1 style="text-align:ceneter">REMUGOL</h1>
+        <div style="width: 300px; height: 54px;" class="spacer"></div>
+
+        <div class="card" ng-repeat="item in ListProduit">
+            <div class="item item-divider item-positive">{{ $index }} -Identification de l'usinier</div>
+
+            <form>
+                <table  class="item item-input">
+                    <tr><td>Nom & Pr&eacute;nom</td></tr>
+                    <tr><td>{{ item.user.nom}}   &nbsp; {{ item.user.prenom}}</td></tr>
+                </table>
+                <table  class="item item-input">
+                    <tr><td>Lieu</td></tr>
+                    <tr><td>  {{ item.user.pays}} &nbsp; {{ item.user.ville}}  &nbsp;   {{ item.user.zone }}</td></tr>
+                </table>
+                <table  class="item item-input">
+                    <tr><td>Contact</td></tr>
+                    <tr><td> {{ item.user.contact}}</td></tr>
+                </table>
+
+                <table  class="item item-input">
+                    <tr><td>Type Usine</td></tr>
+                    <tr><td>  {{ item.user.type_usine}}</td></tr>
+                </table>
+                <table  class="item item-input">
+                    <tr><td>Capacite Usine</td></tr>
+                    <tr><td>  {{ item.user.capacite}}</td></tr>
+                </table>
+                <button  class="button button-clear button-positive" ng-click="ModalPrint(item)">Details Sur la Paddy</button>
+                <button  class="button button-clear button-positive" ng-click="ModalPrint(item)">Details Sur le riz blanchi</button>
+                <button style="margin-top:7px" ng-click="deleteProduit($index)" class="button icon ion-trash-b button-assertive button-small" ></button>
+                <script id="modal.html" type="text/ng-template" class="responsive-md responsive-lg" >
+                    <div class="modal">
+                        <header class="bar bar-header bar-clear">
+                            <h1 class="title" style="color: #387ef5;font-weight: bold" > {{ item.user.firstName}}   &nbsp; {{ item.user.lastName}}</h1>
+                            <div class="button button-positive" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
+                        </header>
+                        <div style="margin-top:44px;">
+                            <content  has-header="false" padding="true">
+                                <div class="card"><div class="item item-divider item-positive">Informations sur le Paddy</div>
+
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color: #387ef5;font-weight: bold">Nom & Pr&eacute;nom</td></tr>
+                                        <tr><td>{{ item.paddy.firstName}}   &nbsp; {{ item.paddy.lastName}}</td></tr>
+
+                                    </table>
+
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold">Contacts</td></tr>
+                                        <tr ><td>{{ item.paddy.contact }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold"> Lieu</td></tr>
+                                        <tr ><td>{{ item.paddy.lieu }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold"> Vari&eacute;t&eacute;</td></tr>
+                                        <tr ><td>{{ item.paddy.variete }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold">Qualit&eacute;</td></tr>
+                                        <tr ><td>{{ item.paddy.qualite }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold"> Quantit&eacute;</td></tr>
+                                        <tr ><td>{{ item.paddy.quantite }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color: #387ef5;font-weight: bold"> Type</td></tr>
+                                        <tr><td >{{ item.paddy.type }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color: #387ef5;font-weight: bold"> Date</td></tr>
+                                        <tr><td >{{ item.paddy.date }}</td></tr>
+                                    </table>
+                                </div>
+
+                            </content>
+                        </div>
+                    </div>
+                </script>
+                <script id="modalRiz.html" type="text/ng-template" class="responsive-md responsive-lg" >
+                    <div class="modal">
+                        <header class="bar bar-header bar-clear">
+                            <h1 class="title" style="color: #387ef5;font-weight: bold" > {{ item.user.firstName}}   &nbsp; {{ item.user.lastName}}</h1>
+                            <div class="button button-positive" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
+                        </header>
+                        <div style="margin-top:44px;">
+                            <content  has-header="false" padding="true">
+                                <div class="card"><div class="item item-divider item-positive">Informations sur le Riz blanchi</div>
+
+
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold">Contacts Client</td></tr>
+                                        <tr ><td>{{ item.riz.contact }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold"> Lieu Client</td></tr>
+                                        <tr ><td>{{ item.riz.lieu }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color: #387ef5;font-weight: bold">Date Client</td></tr>
+                                        <tr><td >{{ item.riz.DateClient }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color: #387ef5;font-weight: bold">Cat&eacute;gorie</td></tr>
+                                        <tr><td >{{ item.riz.type }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold"> Vari&eacute;t&eacute;</td></tr>
+                                        <tr ><td>{{ item.riz.variete }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold">Qualit&eacute;</td></tr>
+                                        <tr ><td>{{ item.riz.qualite }}</td></tr>
+                                    </table>
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color:#387ef5;font-weight: bold"> Quantit&eacute;</td></tr>
+                                        <tr ><td>{{ item.riz.quantite }}</td></tr>
+                                    </table>
+
+                                    <table style=""  class="item item-input">
+                                        <tr><td style="color: #387ef5;font-weight: bold"> Date de Stockage</td></tr>
+                                        <tr><td >{{ item.riz.DateStock }}</td></tr>
+                                    </table>
+                                </div>
+                            </content>
+                        </div>
+                    </div>
+                </script>
+            </form>
+        </div>
+
+    </ion-content>
+    <div ng-hide="ListProduit.length" class="bar bar-footer bar-energized">
+        <div class="title"> Liste vide :( </div>
+    </div>
+</ion-view>
+<!--<div class="col col-5 col-offset-90 "><button ng-click="deleteProduit()" class="button icon ion-trash-b button-assertive button-small" ></button></div>-->

@@ -1,0 +1,58 @@
+<div style="" class="list card">
+    <div class="item item-divider">Informations sur le paddy</div>
+    <div class="item item-body">
+        <form  name="authorizationForm" novalidate="" ng-submit="sign(authorizationForm);submitted = true" class="list">
+            <table style="" class="item item-input">
+                <tr><td>Nom fournisseur</td></tr>
+                <tr><td><input placeholder="" type="text" name="nfourn" pattern="^[-\w/]+$" required  ng-model="produit.paddy.firstName" ></td></tr>
+                <tr><td><span ng-if="authorizationForm.nfourn.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Prenom fournisseur</td></tr>
+                <tr><td> <input placeholder="" type="text" name="pfourn" pattern="^[-\w/]+$" required ng-model="produit.paddy.lastName" ></td></tr>
+                <tr><td><span ng-if="authorizationForm.pfourn.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Type</td></tr>
+                <tr><td> <input placeholder="" type="text" required name="type" pattern="^[-\w/]+$" ng-model="produit.paddy.type"></td></tr>
+                <tr><td><span ng-if="authorizationForm.type.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Lieu</td></tr>
+                <tr><td><input placeholder="" type="text" required name="lieu" pattern="^[-\w/]+$" ng-model="produit.paddy.lieu"></td></tr>
+                <tr><td><span ng-if="authorizationForm.lieu.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Contact</td></tr>
+                <tr><td>  <input placeholder="" type="text" name="contact" pattern="^[-\w/]+$" required ng-model="produit.paddy.contact"></td></tr>
+                <tr><td><span ng-if="authorizationForm.contact.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Date</td></tr>
+                <tr><td> <input placeholder="" type="Date"name="dt" required  ng-model="produit.paddy.sDate"></td></tr>
+                <tr><td><span ng-if="authorizationForm.dt.$invalid && submitted" class="assertive">ce champ est de type date</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Variété&nbsp;</td></tr>
+                <tr><td> <input placeholder="" type="text" name="var" pattern="^[-\w/]+$" required ng-model="produit.paddy.variete"></td></tr>
+                <tr><td><span ng-if="authorizationForm.var.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Quantite(T)</td></tr>
+                <tr><td> <input placeholder="" type="number" name="qte" pattern="^[/\d+/]+$" ng-model="produit.paddy.quantite"></td></tr>
+                <tr><td><span ng-if="authorizationForm.qte.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+            </table>
+            <table style="" class="item item-select">
+                <tr><td>Qualite</td></tr>
+                <tr><td> <select  ng-model="produit.paddy.qualite" >
+                    <option value="1">Taux d'humidité</option>
+                    <option value="2">Homogénéité</option>
+                </select></td></tr>
+            </table>
+
+<button type="submit"  class="button button-stable button-block" >Suivant</button>
+            <!--<a style="" class="button button-stable button-block"  ui-sref="produit.page3"   menu-close="">Suivant</a>-->
+
+        </form>
+    </div>
+</div>

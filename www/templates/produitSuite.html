@@ -1,0 +1,62 @@
+<div style="" class="list card">
+    <div class="item item-divider">Informations sur le riz</div>
+    <div class="item item-body">
+        <form name="authorizationForm" novalidate="" class="list" ng-submit="addProduit(authorizationForm);submitted = true">
+            <table style="" class="item item-input">
+                <tr><td>Date de stockage<td></tr>
+                <tr><td><input placeholder="" type="date" name="sdate" required  ng-model="produit.riz.sDate" ><td></tr>
+                <tr><td><span ng-if="authorizationForm.sdate.$invalid && submitted" class="assertive">ce champ est de type date</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Variete<td></tr>
+                <tr><td>  <input placeholder="" type="text" name="var" required pattern="^[-\w/]+$" ng-model="produit.riz.variete"><td></tr>
+                <tr><td><span ng-if="authorizationForm.var.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Quantite<td></tr>
+                <tr><td> <input placeholder="" type="number" required name="qu" pattern="^[-\w/]+$" ng-model="produit.riz.quantite"><td></tr>
+                <tr><td><span ng-if="authorizationForm.qu.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+ 
+            </table>
+            <table style="" class="item item-select">
+                <tr><td>Categorie<td></tr>
+                <tr><td> 
+                <select  ng-model="produit.riz.categorie" >
+                    <option value="1">Entier</option>
+                    <option value="2">Brisee</option>
+                    <option value="2">Intermediaire</option>
+                </select>
+            </table>
+            <table style="" class="item item-select">
+                    <tr><td>Qualite<td></tr>
+                <tr><td> <select  ng-model="produit.riz.qualite" >
+                        <option value="1">Homogeneite</option>
+                        <option value="2">Blancheur du riz</option>
+                        <option value="2">Présence d'impureté</option>
+                    </select><td></tr>
+                </table>
+            <table style="" class="item item-input">
+                    <tr><td>Lieu<td></tr>
+                <tr><td>  <input placeholder="" type="text"  required pattern="^[-\w/]+$" name="lieu" ng-model="produit.riz.lieu"><td></tr>
+                <tr><td><span ng-if="authorizationForm.lieu.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Contact<td></tr>
+                <tr><td> <input placeholder="" type="text" name="con" pattern="^[-\w/]+$" required ng-model="produit.riz.contact"><td></tr>
+                <tr><td><span ng-if="authorizationForm.contact.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
+            </table>
+            <table style="" class="item item-input">
+                <tr><td>Date Livraison au client<td></tr>
+                <tr><td><input placeholder="" type="date" required name="cdate" ng-model="produit.riz.cDate"><td></tr>
+                <tr><td><span ng-if="authorizationForm.cdate.$invalid && submitted" class="assertive">ce champ est de type date</span></td></tr>
+            </table>
+
+
+<button type="submit" class="button button-stable button-block  icon-left ion-android-create">Valider</button>
+
+            <!--<a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addProduit()" menu-close="">Valider</a>-->
+
+
+        </form>
+    </div>
+</div>

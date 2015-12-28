@@ -1,0 +1,20 @@
+<div style="" class="list card">
+    <div class="item item-divider">Etape 1 : Votre Compte Actuel</div>
+    <div class="item item-body">
+        <form style="" class="list">
+            <ion-list style="">
+                <label style="" name="UserName" class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input placeholder="" type="text" ng-model="user.userName" ng-required>
+                </label>
+                <label style="" name="Password" class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input placeholder="" type="password"  ng-model="user.pwd" ng-required>
+                </label>
+            </ion-list>
+            <div style="height: 40px;" class="spacer"></div>
+            <a style="" class="button button-balanced button-block "  ng-click="Suivant()" menu-close="">Suivant</a>
+
+        </form>
+    </div>
+</div>

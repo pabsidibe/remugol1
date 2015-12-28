@@ -1,0 +1,56 @@
+<div style="" class="list card">
+            <div class="item item-divider">Informations financieres</div>
+            <div class="item item-body">
+                <form name="authorizationForm" novalidate="" class="list" ng-submit="addStock(authorizationForm);submitted = true">
+                    
+                        <div class="item item-divider">Systeme de financement</div>
+                       <table style="" class="item item-select">
+                        <tr ><td>Type de Financement</td></tr>
+                        <tr><td> <select  ng-model="stock.finance.financement" >
+                            <option value="R1">Autofinancement</option>
+                            <option value="R2">Banque</option>
+                            <option value="R2">Autres</option>
+                        </select></td></tr>
+                    </table>
+                    <table style="" class="item item-input">
+                       <tr><td>Montant</td></tr>
+                       <tr><td> <input placeholder="" name="mtant" type="number" pattern="^[/\d+/]+$"  required ng-model="stock.finance.montant" ></td></tr>
+                   <tr><td><span ng-if="authorizationForm.mtant.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+                    </table>
+
+                    <div class="item item-divider">Commercialisation</div>
+                    <table style="" class="item item-input">
+                       <tr><td>Quantité production afin de rembourser crédit</td></tr>
+                       <tr><td> <input placeholder="" name="productioncredit" type="number"  required ng-model="stock.finance.productioncredit" ></td></tr>
+                    <tr><td><span ng-if="authorizationForm.productioncredit.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+             </table>
+                    <table style="" class="item item-input">
+                       <tr><td>Quantité production destinée à l’autoconsommation	</td></tr>
+                       <tr><td> <input placeholder="" name="productionautoconsommation" type="number" pattern="^[/\d+/]+$"  required ng-model="stock.finance.productionautoconsommation" ></td></tr>
+                    <tr><td><span ng-if="authorizationForm.productionautoconsommation.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+
+                    </table>
+                    <table style="" class="item item-input">
+                       <tr><td>Quantité production destinée à la vente	</td></tr>
+                       <tr><td> <input placeholder="" name="productionvente" type="number" pattern="^[/\d+/]+$" required ng-model="stock.finance.productionvente" ></td></tr>
+                     <tr><td><span ng-if="authorizationForm.productionvente.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+                  
+                    </table>
+                    <table style="" class="item item-input">
+                       <tr><td>Prix vente minimum	</td></tr>
+                       <tr><td> <input placeholder="" name="prixventemin" type="number" pattern="^[/\d+/]+$" required ng-model="stock.finance.prixventemin" ></td></tr>
+                                       <tr><td><span ng-if="authorizationForm.prixventemin.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+
+                    </table>
+                    <table style="" class="item item-input">
+                       <tr><td>Prix vente maximum	</td></tr>
+                       <tr><td> <input placeholder="" name="prixventemax" type="number" pattern="^[/\d+/]+$"  required ng-model="stock.finance.prixventemax" ></td></tr>
+                    <tr><td><span ng-if="authorizationForm.prixventemax.$invalid && submitted" class="assertive">ce champ est de type numerique</span></td></tr>
+                    </table>
+                    
+                    
+                    <button type="submit" class="button button-stable button-block  icon-left ion-android-create">Valider</button>
+                    <!--<a style="" class="button button-stable button-block  icon-left ion-android-attach" ng-click="addstock()" menu-close="">Valider</a>-->
+                </form>
+            </div>
+        </div>

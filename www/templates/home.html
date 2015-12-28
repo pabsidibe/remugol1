@@ -1,0 +1,69 @@
+<ion-view style=""  view-title="<img src='image/ben.png' >">
+
+
+
+<ion-nav-buttons side="right">
+    <button class="button button-assertive  icon ion-trash-a" ng-click="viderStore()">
+        Vider archives
+    </button>
+    <!--<button class="button button-assertive  icon ion-trash-a" ng-click="viderCre()">-->
+        <!--Vider credentialTEst-->
+    <!--</button>-->
+</ion-nav-buttons>
+
+<ion-content class="has-header" padding="'true'">
+    <h1 style="text-align:center"><img src='image/logo-remugol.png' ></h1>
+    <div style="width: 300px; height: 54px;" class="spacer"></div>
+    <div ng-show ="message.msg"   >
+        <button ng-click="message.msg=''" class="{{message.nClass}} ">
+            {{message.msg}}
+        </button>
+
+
+    </div>
+    <form  style="" class="list"></form>
+    <div ng-animate="toggle"  class="row " style =""  >
+        <div   class="col col-80  ">
+            <a style="{{stylea.prevision}}"  class="button button-stable button-block " href="#/Previsions" menu-close="">Previsions des r&eacute;coltes</a>
+        </div>
+        <div class="col">
+            <a style="{{stylea.prevision}}margin-top: 10px;" class="button  icon ion-folder  button-positive button-full" href="#/archives/Previsions">
+            <label  style="font-size: 5px;">{{numberPrevision}}</label>
+            </a>
+        </div>
+    </div>
+
+
+    <div ng-animate="toggle"  class="row">
+        <div class="col col-80">
+            <a  style="" class="button button-stable button-block " href="#/Stocks" menu-close="">Stocks disponibles </a>
+        </div>
+        <div class="col">
+            <a style="margin-top: 9px" class="button icon ion-folder button-positive button-full "  href="#/archives/Recoltes" menu-close="">
+              <label style="font-size: 5px;">{{numberStock}}</label>
+            </a>
+        </div>
+    </div>
+
+    <div ng-animate="toggle"  class="row">
+        <div class="col col-80">
+            <a   style="{{stylea.usine}}" class="button button-stable button-block " href="#/Produits" menu-close="">Produits des usines</a>
+            </div>
+        <div class="col">
+            <a style="{{stylea.usine}}margin-top: 9px" class="button icon ion-folder button-positive button-full" href="#/archives/Produits" menu-close="">
+              <label ng-if="verify.typeUser='usinier'" style="font-size: 5px;">{{numberProduit}}</label>
+            </a>
+        </div>
+    </div>
+    <div style="width: 300px; height: 30px;" class="spacer"></div>
+
+    <!--<div style="width: 300px; height: 30px;" class="spacer" ></div>-->
+
+</ion-content>
+
+<div ng-hide="ListStock" class="bar bar-footer">
+    <div class="title">
+        <a style="" class="button button-balanced button-block " ng-if="getStore() == null" ng-click="uploadData()" ng-hide="" menu-close=""> <i class="icon ion-upload"></i>Envoyer vos enregistrements</a>
+    </div>
+</div>
+</ion-view>
