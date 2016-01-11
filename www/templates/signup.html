@@ -31,18 +31,26 @@
             <tr ><td><input placeholder="" name="pwd" type="password" pattern="^[-\w/]+$" required  ng-model="inscription.user.mdp" ></td></tr>
             <tr><td><span ng-if="authorizationForm.pwd.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
           </table>
-          <table style=""  class="item item-input">
+          <table style="" class="item item-select">
+            <tr ><td>Type Utilisateur</td></tr>
+            <tr><td> <select  ng-model="inscription.user.type" >
+              <option value="producteur">producteur</option>
+              <option value="usinier">usinier</option>
+              <option value="agent">agent</option>
+            </select></td></tr>
+          </table>
+          <table ng-if="inscription.user.type != 'agent'" style=""  class="item item-input">
             <tr><td>Zone/Village</td></tr>
             <tr ><td> <input placeholder="" type="text"   name="zone" pattern="^[-\w/]+$" required  ng-model="inscription.user.zone"></td></tr>
             <tr><td><span ng-if="authorizationForm.zone.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
 
           </table>
-          <table style=""  class="item item-input">
+          <table ng-if="inscription.user.type != 'agent'" style=""  class="item item-input">
             <tr><td>Pays</td></tr>
             <tr ><td> <input placeholder="" type="text"  name="pays" required  ng-model="inscription.user.pays" ></td></tr>
             <tr><td><span ng-if="authorizationForm.pays.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
           </table>
-          <table style=""  class="item item-input">
+          <table ng-if="inscription.user.type != 'agent'" style=""  class="item item-input">
             <tr><td>Ville</td></tr>
             <tr ><td> <input placeholder="" type="text"  name="ville" pattern="^[-\w/]+$" required  ng-model="inscription.user.ville" ></td></tr>
             <tr><td><span ng-if="authorizationForm.ville.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
@@ -64,14 +72,7 @@
             <tr ><td> <input placeholder="" type="text"  name="contact" pattern="^[-\w/]+$" required  ng-model="inscription.user.contact"></td></tr>
             <tr><td><span ng-if="authorizationForm.contact.$invalid && submitted" class="assertive">ce champ est de type texte</span></td></tr>
           </table>
-          <table style="" class="item item-select">
-            <tr ><td>Type Utilisateur</td></tr>
-            <tr><td> <select  ng-model="inscription.user.type" >
-              <option value="producteur">producteur</option>
-              <option value="usinier">usinier</option>
-              <option value="agent">agent</option>
-            </select></td></tr>
-          </table>
+
           <div ng-if="inscription.user.type == 'producteur'">
             <table style="" class="item item-select">
               <tr ><td>Type de Structure</td></tr>
